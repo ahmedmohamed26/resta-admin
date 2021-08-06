@@ -1,0 +1,36 @@
+<header class="header-bar">
+  <div class='d-flex justify-content-between align-items-center'>
+    <div class="d-flex align-items-center logo">
+      <!-- <img src="assets/images/logo.png" alt="Resta"> -->
+      <h1 class="mb-0">Resta</h1>
+    </div>
+    <div>
+      <span class="material-icons" (click)="openNav()">
+        view_week
+      </span>
+    </div>
+  </div>
+</header>
+
+
+<section class="layout">
+  <div class="container-fluid">
+    <div class="row">
+      <div id="mySidenav" class="side-nav-mobile" [ngClass]="{'sidenavToggle': sideMob}">
+        <app-side-menu></app-side-menu>
+      </div>
+      <div class="col-md-2 side-nav-desktop">
+        <app-side-menu></app-side-menu>
+      </div>
+      <!-- col -->
+      <div class="col-md-10">
+        <div class="parent">
+          <app-header></app-header>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+      <!-- col -->
+    </div>
+    <!-- row -->
+  </div>
+</section>

@@ -1,0 +1,37 @@
+<section class="admins">
+
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+      <h1 class="mb-0">Admins</h1>
+      <button mat-raised-button class="default-button" (click)='openPopup()'>add admin</button>
+    </div>
+
+    <ng-container *ngIf='loadingSpinner'>
+      <app-loading-spinner></app-loading-spinner>
+    </ng-container>
+
+    <ng-container *ngIf='!loadingSpinner'>
+      <table class="table mt-5">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">E-mail</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let admin of admins'>
+            <th scope="row">{{admin?.id}}</th>
+            <td>{{admin?.email}}</td>
+            <td>
+              <span class="material-icons" (click)='openPopup(admin)'>
+                edit
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+
+  </div>
+</section>

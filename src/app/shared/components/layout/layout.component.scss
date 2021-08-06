@@ -1,0 +1,50 @@
+@import '../../../../assets/style/shared/variables.scss';
+
+.header-bar {
+    padding: 15px;
+    background-color: $light-gray;
+    display: none;
+    .logo{
+        h1{
+            font-size: $Size22;
+            color: $third-color;
+            margin-left: 10px;
+        }
+    }
+    
+}
+
+.parent{
+  padding: 20px 0;
+}
+
+.side-nav-mobile {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    transition:$transition;
+    z-index: 333;
+  }
+  .sidenavToggle {
+    height: 100vh;
+    width: 50%;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+
+
+ 
+  @media(max-width:991px){
+    .header-bar{
+      display: block !important;
+    }
+    .side-nav-desktop{display: none;}
+  }

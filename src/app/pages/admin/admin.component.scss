@@ -1,0 +1,29 @@
+@import '../../../assets/style/shared/variables.scss';
+
+
+.admins {
+    padding: 15px;
+
+    h1 {
+        color: $third-color;
+        font-size: $Size25;
+        font-family: 'poppins-bold';
+    }
+
+}
+
+::ng-deep {
+    .dialog-responsive {
+        width: 30vw !important;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    ::ng-deep {
+        .dialog-responsive {
+            width: 90vw !important;
+        }
+    }
+}

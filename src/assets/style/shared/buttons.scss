@@ -1,0 +1,14 @@
+@import './variables.scss';
+.default-button{
+    background: $main-color;
+    color: #fff;
+    text-transform: capitalize;
+    h5{
+        background: $main-color;
+        color: #fff;
+        text-transform: capitalize;
+        font-size: $Size16;
+        padding: 10px;
+        margin-bottom: 0;
+    }
+}

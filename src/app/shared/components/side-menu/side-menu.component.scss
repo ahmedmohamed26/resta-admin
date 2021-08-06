@@ -1,0 +1,63 @@
+@import '../../../../assets/style/shared/variables.scss';
+
+.side-menu {
+    background-color: $main-color;
+    position: fixed;
+    height: 100vh;
+    padding: 20px;
+    width: 200px;
+    img {
+        width: 100px;
+    }
+    .name-company {
+        margin-bottom: 50px;
+        h1 {
+            font-size: $Size17;
+            color:#fff;
+            font-family: 'poppins-semiBold';
+            margin: 0 5px;
+            text-transform: capitalize;
+        }
+    }
+
+    .list-item {
+        .nav-item {
+            margin-bottom: 10px;
+            .material-icons{
+                color: #fff;
+            }
+            .nav-link {
+                padding: 10px 0px;
+                font-size: $Size16;
+                position: relative;
+                color: #fff;
+                margin: 0 10px;
+                font-family: 'poppins-light';
+                text-transform: capitalize;
+                &.active::after {
+                    content: '';
+                    position: absolute;
+                    left: -50px;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    width: 3px;
+                    height: 35px;
+                    background-color: #fff;
+
+                }
+            }
+
+        }
+    }
+
+
+}
+
+
+
+@media(max-width:991px) {
+    .side-menu {
+        position: initial !important;
+    }
+}

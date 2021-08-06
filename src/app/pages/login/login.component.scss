@@ -1,0 +1,14 @@
+@import '../../../assets/style/shared/variables.scss';
+.login{
+    height: 100vh;
+    background: $main-color;
+    display: flex;
+    align-items: center;
+    form{
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 70vh;
+        margin:auto;
+    }
+}

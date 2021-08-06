@@ -1,0 +1,10 @@
+@import '../../../../assets/style/shared/variables.scss';
+
+.parent{
+    height: 500px;
+    .spinner-border{
+        color: $main-color;
+        width: 100px;
+        height: 100px;
+    }
+}

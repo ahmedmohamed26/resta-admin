@@ -1,0 +1,12 @@
+@import '../../../assets/style/shared/variables.scss';
+
+
+.dashboard {
+    padding: 15px;
+
+    h1 {
+        color: $third-color;
+        font-size: $Size20;
+        font-family: 'poppins-bold';
+    }
+}
