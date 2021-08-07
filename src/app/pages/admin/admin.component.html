@@ -3,6 +3,10 @@
   <div class="container">
     <div class="d-flex align-items-center justify-content-between">
       <h1 class="mb-0">Admins</h1>
+        <mat-form-field appearance="outline" class='w-50' style="font-size: 12px"> 
+          <input type="text" matInput [(ngModel)]='search' placeholder="Search" readonly
+            onfocus="this.removeAttribute('readonly');">
+        </mat-form-field>
       <button mat-raised-button class="default-button" (click)='openPopup()'>add admin</button>
     </div>
 
@@ -11,10 +15,11 @@
     </ng-container>
 
     <ng-container *ngIf='!loadingSpinner'>
-      <table class="table mt-5">
-        <thead class="thead-light">
+      <table class="table mt-5 text-center">
+        <thead class="thead-dark">
           <tr>
             <th scope="col">id</th>
+            <th scope="col">Name</th>
             <th scope="col">E-mail</th>
             <th scope="col"></th>
           </tr>
@@ -22,6 +27,7 @@
         <tbody>
           <tr *ngFor='let admin of admins'>
             <th scope="row">{{admin?.id}}</th>
+            <td>{{admin?.firstName | titlecase }} {{admin?.lastName | titlecase }}</td>
             <td>{{admin?.email}}</td>
             <td>
               <span class="material-icons" (click)='openPopup(admin)'>

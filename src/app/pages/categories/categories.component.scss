@@ -1,0 +1,40 @@
+@import '../../../assets/style/shared/variables.scss';
+
+
+.categories {
+    padding: 15px;
+
+    h1 {
+        color: $third-color;
+        font-size: $Size25;
+        font-family: 'poppins-bold';
+    }
+
+     ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+        background-color: $main-color ;
+    }
+    
+     ::ng-deep  .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+        background-color: #f3f3f3;
+    }
+
+}
+
+::ng-deep {
+    .category-dialog-responsive {
+        width: 30vw !important;
+    }
+    .categories .mat-form-field-wrapper{
+        padding: 0 !important;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    ::ng-deep {
+        .category-dialog-responsive  {
+            width: 90vw !important;
+        }
+    }
+}

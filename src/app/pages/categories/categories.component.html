@@ -1,1 +1,44 @@
-<p>categories works!</p>
+<section class="categories">
+
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+      <h1 class="mb-0">Categories</h1>
+      <mat-form-field appearance="outline" class='w-50' style="font-size: 12px">
+        <input type="text" matInput [(ngModel)]='search' placeholder="Search" readonly
+          onfocus="this.removeAttribute('readonly');">
+      </mat-form-field>
+      <button mat-raised-button class="default-button" (click)='openPopup()'>add Category</button>
+    </div>
+
+    <ng-container *ngIf='loadingSpinner'>
+      <app-loading-spinner></app-loading-spinner>
+    </ng-container>
+
+    <ng-container *ngIf='!loadingSpinner'>
+      <table class="table mt-5 text-center">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Active</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let category of categories'>
+            <th scope="row">{{category?.id}}</th>
+            <td>{{category?.name}}</td>
+            <td>{{category?.isActive ? 'مفعل' : 'غير مفعل'}}</td>
+            <td>
+              <span class="material-icons" (click)='openPopup(category)'>
+                edit
+              </span>
+              <mat-slide-toggle [checked]="category?.isActive" class="mr-2 ml-2"></mat-slide-toggle>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+
+  </div>
+</section>

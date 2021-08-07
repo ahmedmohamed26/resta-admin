@@ -29,6 +29,8 @@ export class AddEditAdminComponent implements OnInit {
 
   setForm(): void {
     this.adminForm = new FormGroup({
+      firstName: new FormControl(this.data.admin ? this.data.admin.firstName : '', Validators.required),
+      lastName: new FormControl(this.data.admin ? this.data.admin.lastName : '', Validators.required),
       email: new FormControl(this.data.admin ? this.data.admin.email : '', [
         Validators.required,
         Validators.email,
@@ -45,10 +47,12 @@ export class AddEditAdminComponent implements OnInit {
   }
 
   submit() {
-    this.loadingSpinner = true;
-    setTimeout(() => {
-      this.loadingSpinner = false;
-    }, 1000);
+    if (this.adminForm.valid) {      
+      this.loadingSpinner = true;
+      setTimeout(() => {
+        this.loadingSpinner = false;
+      }, 1000);
+    }
 
   }
 

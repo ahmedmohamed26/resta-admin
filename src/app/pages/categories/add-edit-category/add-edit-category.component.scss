@@ -1,0 +1,21 @@
+@import '../../../../assets/style/shared/variables.scss';
+.category-popup{
+    h6 {
+        color: $third-color;
+        font-size: $Size16;
+        font-family: 'poppins-bold';
+        margin-bottom: 0;
+    }
+    .close-icon{
+        color: $third-color;
+        font-size: $Size22;
+        cursor: pointer;
+    }
+    ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+        background-color: $main-color ;
+    }
+    
+     ::ng-deep  .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+        background-color: #f3f3f3;
+    }
+}

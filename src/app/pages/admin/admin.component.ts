@@ -9,25 +9,33 @@ import { AddEditAdminComponent } from './add-edit-admin/add-edit-admin.component
 })
 export class AdminComponent implements OnInit {
   loadingSpinner: boolean;
+  search: string;
   admins = [
     {
       "id": 1,
       "email": "ahmed.m.moneem@gmail.com",
-      "password":"12345678"
+      "password": "12345678",
+      "firstName": "ahmed",
+      "lastName": "mohamed"
     },
     {
       "id": 2,
       "email": "omar@gmail.com",
-      "password":"12345678"
+      "password": "12345678",
+      "firstName": "omar",
+      "lastName": "ibrahim"
     },
     {
       "id": 3,
       "email": "abdo@gmail.com",
-      "password":"12345678"
+      "password": "12345678",
+      "firstName": "abdel hamed",
+      "lastName": "nshat"
     }
   ]
   constructor(public dialog: MatDialog) {
     this.loadingSpinner = true;
+    this.search = '';
    }
 
   ngOnInit(): void {

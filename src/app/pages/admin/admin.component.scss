@@ -9,12 +9,15 @@
         font-size: $Size25;
         font-family: 'poppins-bold';
     }
-
+ 
 }
 
 ::ng-deep {
     .dialog-responsive {
         width: 30vw !important;
+    }
+    .admins .mat-form-field-wrapper{
+        padding: 0 !important;
     }
 }
 
