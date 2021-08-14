@@ -1,5 +1,50 @@
 <section class="dashboard">
-  <div class="d-flex align-items-center justify-content-between">
-    <h1 class="mb-0">Dashboard</h1>
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+      <h1 class="mb-0">Dashboard</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink='/dashboard'>Dashboard</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Modern Dashboard
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+
+    <div class="mt-5 d-flex align-items-center justify-content-between">
+      <mat-form-field>
+        <mat-select [(ngModel)]='filter.city'>
+          <mat-option value="1">Cairo</mat-option>
+          <mat-option value="2">Giza</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-radio-group aria-label="Select an option" [(ngModel)]='filter.count'>
+        <mat-radio-button value="1">Person</mat-radio-button>
+        <mat-radio-button value="2">Places</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+
+    <ng-container *ngIf='loadingSpinner'>
+      <app-loading-spinner></app-loading-spinner>
+    </ng-container>
+
+    <ng-container *ngIf='!loadingSpinner'>
+      <div class="row mt-5">
+        <div class="col-md-3 col-xs-12" *ngFor='let item of items'>
+          <div class="all-item up d-flex align-items-center"><i class="material-icons">other_houses</i>
+            <div class="phone-number">
+              <h6>{{item?.cityName}}</h6>
+              <h2>Per Person: <span>{{item?.countPerson}}</span></h2>
+              <h2>Per Places: <span>{{item?.countPlaces}}</span></h2>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </ng-container>
+
   </div>
 </section>
