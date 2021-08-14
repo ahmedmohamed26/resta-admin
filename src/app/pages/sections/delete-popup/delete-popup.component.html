@@ -1,0 +1,25 @@
+<section class="delete-popup">
+  <div class="d-flex justify-content-end align-items-center mb-2">
+    <span class="material-icons close-icon" (click)='closePopup()'>
+      cancel
+    </span>
+  </div>
+  <div class="col-md-12 text-center  mb-4">
+    <h6>Are you sure you want delete it ?</h6>
+  </div>
+  <div class="col-md-12 d-flex justify-content-center">
+    <button mat-button class="default-button d-flex justify-content-center w-75 mr-1" [disabled]='loadingSpinner'>
+      <h5 *ngIf='!loadingSpinner'>Yes</h5>
+      <ng-container *ngIf='loadingSpinner'>
+        <app-spinner-button></app-spinner-button>
+      </ng-container>
+    </button>
+    <button mat-button class="cancel-button d-flex justify-content-center w-75 ml-1" [disabled]='loadingSpinner'>
+      <h5 *ngIf='!loadingSpinner'>No</h5>
+      <ng-container *ngIf='loadingSpinner'>
+        <app-spinner-button></app-spinner-button>
+      </ng-container>
+    </button>
+
+  </div>
+</section>

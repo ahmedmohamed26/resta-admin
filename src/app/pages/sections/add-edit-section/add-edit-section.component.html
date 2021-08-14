@@ -1,0 +1,36 @@
+<section class="section-popup">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h6 class="mb-0">{{data?.section ? 'Edit Section' : 'Add Section'}}</h6>
+      <span class="material-icons close-icon" (click)='closePopup()'>
+        cancel
+      </span>
+    </div>
+    <form [formGroup]="sectionForm" (ngSubmit)="submit()" autocomplete="off">
+      <div class="row align-items-center">
+        <div class="col-md-10">
+          <mat-form-field appearance="outline" class='w-100'>
+            <input type="text" matInput formControlName="name" placeholder="Section Name" readonly
+              onfocus="this.removeAttribute('readonly');">
+            <mat-error *ngIf="sectionForm.controls['name'].hasError('required')">
+                Section Name is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2">
+          <mat-slide-toggle formControlName="isActive">Slide me!</mat-slide-toggle>
+            <mat-error *ngIf="sectionForm.controls['isActive'].hasError('required')">
+              Active is required
+            </mat-error>
+        </div>
+        <div class='col-md-12 text-center mt-3'>
+          <button mat-button class="default-button d-flex justify-content-center w-75 m-auto" [disabled]='loadingSpinner'>
+            <h5 *ngIf='!loadingSpinner'>Save</h5>
+            <ng-container *ngIf='loadingSpinner'>
+              <app-spinner-button></app-spinner-button>
+            </ng-container>
+          </button>
+        </div>
+      </div>
+    </form>
+  </section>
+  

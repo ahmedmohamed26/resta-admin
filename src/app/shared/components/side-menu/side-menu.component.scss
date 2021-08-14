@@ -6,11 +6,11 @@
     height: 100vh;
     padding: 20px;
     width: 200px;
-    img {
+     img {
         width: 100px;
     }
     .name-company {
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         h1 {
             font-size: $Size17;
             color:#fff;
@@ -22,7 +22,7 @@
 
     .list-item {
         .nav-item {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             .material-icons{
                 color: #fff;
             }

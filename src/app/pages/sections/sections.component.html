@@ -1,13 +1,12 @@
-<section class="categories">
-
+<section class="sections">
   <div class="container">
     <div class="d-flex align-items-center justify-content-between">
-      <h1 class="mb-0">Categories</h1>
+      <h1 class="mb-0">Sections</h1>
       <mat-form-field appearance="outline" class='w-50' style="font-size: 12px">
         <input type="text" matInput [(ngModel)]='search' placeholder="Search" readonly
           onfocus="this.removeAttribute('readonly');">
       </mat-form-field>
-      <button mat-raised-button class="default-button" (click)='openPopup()'>add Category</button>
+      <button mat-raised-button class="default-button" (click)='openPopup()'>add Section</button>
     </div>
 
     <ng-container *ngIf='loadingSpinner'>
@@ -25,15 +24,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor='let category of categories'>
-            <th scope="row">{{category?.id}}</th>
-            <td>{{category?.name}}</td>
-            <td>{{category?.isActive ? 'مفعل' : 'غير مفعل'}}</td>
+          <tr *ngFor='let section of sections'>
+            <th scope="row">{{section?.id}}</th>
+            <td>{{section?.name}}</td>
+            <td>{{section?.isActive ? 'مفعل' : 'غير مفعل'}}</td>
             <td>
-              <span class="material-icons" (click)='openPopup(category)'>
+              <span class="material-icons" (click)='openPopup(section)'>
                 edit
               </span>
-              <mat-slide-toggle [checked]="category?.isActive" class="mr-2 ml-2"></mat-slide-toggle>
+              <span class="material-icons mr-1 ml-1" (click)='deletePopup(section)'>
+                delete
+              </span>
+              <mat-slide-toggle [checked]="section?.isActive" class="mr-2 ml-2"></mat-slide-toggle>
             </td>
           </tr>
         </tbody>
