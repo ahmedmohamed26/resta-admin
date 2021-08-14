@@ -1,36 +1,29 @@
 @import '../../../../assets/style/shared/variables.scss';
 
 .side-menu {
-    background-color: $main-color;
+    background-color:#fff;
     position: fixed;
+    top: 52px;
+    left: 0;
     height: 100vh;
     padding: 20px;
     width: 200px;
-     img {
-        width: 100px;
-    }
-    .name-company {
-        margin-bottom: 20px;
-        h1 {
-            font-size: $Size17;
-            color:#fff;
-            font-family: 'poppins-semiBold';
-            margin: 0 5px;
-            text-transform: capitalize;
-        }
-    }
+    overflow: auto;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+
 
     .list-item {
         .nav-item {
             margin-bottom: 5px;
             .material-icons{
-                color: #fff;
+                color:$third-color;
             }
             .nav-link {
                 padding: 10px 0px;
                 font-size: $Size16;
                 position: relative;
-                color: #fff;
+                color:$third-color;
                 margin: 0 10px;
                 font-family: 'poppins-light';
                 text-transform: capitalize;
@@ -43,7 +36,7 @@
                     margin: auto;
                     width: 3px;
                     height: 35px;
-                    background-color: #fff;
+                    background-color:$third-color;;
 
                 }
             }

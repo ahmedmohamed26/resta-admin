@@ -3,11 +3,16 @@
 
 header{
     padding: 15px;
-    h1{
-        color: $third-color;
-        font-size: $Size14;
-        font-family:'poppins-bold';
+    background-color: $main-color;
+    h1 {
+        font-size: $Size17;
+        color:#fff;
+        font-family: 'poppins-semiBold';
+        margin: 0 5px;
+        text-transform: capitalize;
     }
-
+    .material-icons{
+        color: #fff;
+    }
 
 }

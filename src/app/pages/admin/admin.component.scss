@@ -2,12 +2,16 @@
 
 
 .admins {
-    padding: 15px;
-
+    padding: 25px 0;
     h1 {
-        color: $third-color;
+        color: $main-color;
         font-size: $Size25;
         font-family: 'poppins-bold';
+    }
+    h6 {
+        color: $third-color;
+        font-size: $Size16;
+        font-family: 'poppins-regular';
     }
  
 }

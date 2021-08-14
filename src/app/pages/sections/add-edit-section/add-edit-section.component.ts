@@ -18,7 +18,6 @@ export class AddEditSectionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.data);
     this.setForm();
   }
 
