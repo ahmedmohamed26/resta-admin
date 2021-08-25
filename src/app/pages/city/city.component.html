@@ -1,1 +1,61 @@
-<p>city works!</p>
+<section class="city">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <h1 class="mb-0">City</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink='/dashboard'>Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">City</li>
+          </ol>
+        </nav>
+      </div>
+  
+  
+      <div class="d-flex align-items-center justify-content-between align-items-center mt-4">
+        <h6 class="mb-0">Total Cities : {{cities.length}} </h6>
+        <div class="d-flex align-items-center justify-content-between align-items-center">
+          <mat-form-field appearance="outline" class=' mr-2 ml-2'  style="font-size:11px">
+            <input type="text" matInput [(ngModel)]='search' placeholder="Search" readonly
+              onfocus="this.removeAttribute('readonly');">
+              <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+          <button mat-raised-button class="default-button" (click)='openPopup()'>add City</button>
+        </div>
+      </div>
+  
+      <ng-container *ngIf='loadingSpinner'>
+        <app-loading-spinner></app-loading-spinner>
+      </ng-container>
+  
+      <ng-container *ngIf='!loadingSpinner'>
+        <table class="table text-center   section-layout">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">City</th>
+              <th scope="col">Active</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let city of cities'>
+              <th scope="row">{{city?.id}}</th>
+              <td>{{city?.name}}</td>
+              <td>{{city?.isActive ? 'مفعل' : 'غير مفعل'}}</td>
+              <td>
+                <span class="material-icons" (click)='openPopup(city)'>
+                  edit
+                </span>
+                <span class="material-icons mr-1 ml-1" (click)='deletePopup(city)'>
+                  delete
+                </span>
+                <mat-slide-toggle [checked]="city?.isActive" class="mr-2 ml-2"></mat-slide-toggle>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+  
+    </div>
+  </section>
+  

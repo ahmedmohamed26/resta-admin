@@ -36,8 +36,8 @@
           <div class="all-item up d-flex align-items-center"><i class="material-icons">other_houses</i>
             <div class="phone-number">
               <h6>{{item?.cityName}}</h6>
-              <h2>Per Person: <span>{{item?.countPerson}}</span></h2>
-              <h2>Per Places: <span>{{item?.countPlaces}}</span></h2>
+              <h2 *ngIf="filter.count == '1'">Per Person: <span>{{item?.countPerson}}</span></h2>
+              <h2 *ngIf="filter.count == '2'">Per Places: <span>{{item?.countPlaces}}</span></h2>
 
             </div>
           </div>

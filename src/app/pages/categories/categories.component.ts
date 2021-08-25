@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEditCategoryComponent } from './add-edit-category/add-edit-category.component';
+import { DeleteCategoryComponent } from './delete-category/delete-category.component';
 
 @Component({
   selector: 'app-categories',
@@ -46,6 +47,19 @@ export class CategoriesComponent implements OnInit {
 
   openPopup(category?: any): void {
     const dialogRef = this.dialog.open(AddEditCategoryComponent, {
+      panelClass: "category-dialog-responsive",
+      data: {category:category},
+      disableClose: false,
+      hasBackdrop: true,
+    });
+    // dialogRef.afterClosed().subscribe((result: any) => {
+    //   this.openModal = false;
+    // });
+  }
+
+
+  deletePopup(category?: any): void {
+    const dialogRef = this.dialog.open(DeleteCategoryComponent, {
       panelClass: "category-dialog-responsive",
       data: {category:category},
       disableClose: false,

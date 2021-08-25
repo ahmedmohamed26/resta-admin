@@ -17,11 +17,8 @@
 }
 
 ::ng-deep {
-    .dialog-responsive {
-        width: 30vw !important;
-    }
-    .admins .mat-form-field-wrapper{
-        padding: 0 !important;
+    .admins-dialog-responsive {
+        width: 40vw !important;
     }
 }
 
@@ -29,7 +26,7 @@
 
 @media (max-width: 768px) {
     ::ng-deep {
-        .dialog-responsive {
+        .admins-dialog-responsive  {
             width: 90vw !important;
         }
     }

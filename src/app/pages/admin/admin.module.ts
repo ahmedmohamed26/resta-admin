@@ -5,12 +5,14 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { AddEditAdminComponent } from './add-edit-admin/add-edit-admin.component';
+import { DeleteAdminComponent } from './delete-admin/delete-admin.component';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
-    AddEditAdminComponent
+    AddEditAdminComponent,
+    DeleteAdminComponent
   ],
   imports: [
     CommonModule,

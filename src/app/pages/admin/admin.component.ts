@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEditAdminComponent } from './add-edit-admin/add-edit-admin.component';
+import { DeleteAdminComponent } from './delete-admin/delete-admin.component';
 
 @Component({
   selector: 'app-admin',
@@ -49,6 +50,18 @@ export class AdminComponent implements OnInit {
     const dialogRef = this.dialog.open(AddEditAdminComponent, {
       panelClass: "dialog-responsive",
       data: {admin:item},
+      disableClose: false,
+      hasBackdrop: true,
+    });
+    // dialogRef.afterClosed().subscribe((result: any) => {
+    //   this.openModal = false;
+    // });
+  }
+
+  deletePopup(admin?: any): void {
+    const dialogRef = this.dialog.open(DeleteAdminComponent, {
+      panelClass: "admins-dialog-responsive",
+      data: {admin:admin},
       disableClose: false,
       hasBackdrop: true,
     });

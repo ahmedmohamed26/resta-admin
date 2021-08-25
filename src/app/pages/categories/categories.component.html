@@ -47,6 +47,9 @@
               <span class="material-icons" (click)='openPopup(category)'>
                 edit
               </span>
+              <span class="material-icons mr-1 ml-1" (click)='deletePopup(category)'>
+                delete
+              </span>
               <mat-slide-toggle [checked]="category?.isActive" class="mr-2 ml-2"></mat-slide-toggle>
             </td>
           </tr>
