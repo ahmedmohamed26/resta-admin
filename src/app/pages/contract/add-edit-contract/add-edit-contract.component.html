@@ -1,0 +1,119 @@
+<section class="contract-popup">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h6 class="mb-0">{{data?.contract ? 'Edit Contract' : 'Add Contract'}}</h6>
+    <span class="material-icons close-icon" (click)='closePopup()'>
+      cancel
+    </span>
+  </div>
+  <form [formGroup]="contractForm" (ngSubmit)="submit()" autocomplete="off">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class='w-100' style="font-size: 12px;">
+          <mat-label>Owner Name</mat-label>
+          <input type="text" matInput formControlName="nameOwner" placeholder="Owner Name" readonly
+            onfocus="this.removeAttribute('readonly');">
+          <mat-error *ngIf="contractForm.controls['nameOwner'].hasError('required')">
+            Owner Name is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class='w-100' style="font-size: 12px;">
+          <mat-label>Owner Phone</mat-label>
+          <input type="text" matInput formControlName="phoneOwner" placeholder="Owner Phone" readonly
+            onfocus="this.removeAttribute('readonly');">
+          <mat-error *ngIf="contractForm.controls['phoneOwner'].hasError('required')
+          ||  contractForm.controls['phoneOwner'].hasError('minlength')
+          ||  contractForm.controls['phoneOwner'].hasError('maxlength')
+          ||  contractForm.controls['phoneOwner'].hasError('pattern')">
+            Phone number must be 11 digits and starts with 01xxxxxxxxx
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class='w-100' style="font-size: 12px;">
+          <mat-label>Manager Name</mat-label>
+          <input type="text" matInput formControlName="nameManager" placeholder="Manager Name" readonly
+            onfocus="this.removeAttribute('readonly');">
+          <mat-error *ngIf="contractForm.controls['nameManager'].hasError('required')">
+            Manager Name is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class='w-100' style="font-size: 12px;">
+          <mat-label>Manager Phone</mat-label>
+          <input type="text" matInput formControlName="phoneManager" placeholder="Manager Phone" readonly
+            onfocus="this.removeAttribute('readonly');">
+          <mat-error *ngIf="contractForm.controls['phoneManager'].hasError('required')
+          ||  contractForm.controls['phoneManager'].hasError('minlength')
+          ||  contractForm.controls['phoneManager'].hasError('maxlength')
+          ||  contractForm.controls['phoneManager'].hasError('pattern')">
+            Phone number must be 11 digits and starts with 01xxxxxxxxx
+          </mat-error>
+        </mat-form-field>
+      </div>
+     
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" class='w-100' style="font-size: 12px;">
+          <mat-label>Date Visit</mat-label>
+          <input matInput [matDatepicker]="dp3" formControlName="dateVisit" >
+          <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+          <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+          <mat-error *ngIf="contractForm.controls['dateVisit'].hasError('required')">
+            Date Visit is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" class='w-100' style="font-size: 12px;">
+          <mat-label>Date From Contract</mat-label>
+          <input matInput [matDatepicker]="dp3" formControlName="dateFromContract" >
+          <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+          <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+          <mat-error *ngIf="contractForm.controls['dateFromContract'].hasError('required')">
+            Date From Contract is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" class='w-100' style="font-size: 12px;">
+          <mat-label>Date To Contract</mat-label>
+          <input matInput [matDatepicker]="dp3" formControlName="dateToContract" >
+          <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+          <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+          <mat-error *ngIf="contractForm.controls['dateToContract'].hasError('required')">
+            Date To Contract is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class='w-100' style="font-size: 12px;">
+          <mat-label>E-mail</mat-label>
+          <input type="text" matInput formControlName="email" placeholder="E-mail" readonly
+            onfocus="this.removeAttribute('readonly');">
+          <mat-error *ngIf="contractForm.controls['email'].hasError('required')">
+            Email is required
+          </mat-error>
+          <mat-error *ngIf="contractForm.controls['email'].hasError('email')">
+            Email is not valid
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-slide-toggle formControlName="isActive"></mat-slide-toggle>
+          <mat-error *ngIf="contractForm.controls['isActive'].hasError('required')">
+            Active is required
+          </mat-error>
+      </div>
+      <div class='col-md-12 text-center mt-3'>
+        <button mat-button class="default-button d-flex justify-content-center w-75 m-auto" [disabled]='loadingSpinner'>
+          <h5 *ngIf='!loadingSpinner'>Save</h5>
+          <ng-container *ngIf='loadingSpinner'>
+            <app-spinner-button></app-spinner-button>
+          </ng-container>
+        </button>
+      </div>
+    </div>
+  </form>
+</section>

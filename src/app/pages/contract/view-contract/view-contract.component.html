@@ -1,0 +1,19 @@
+<section class="view-popup">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h6 class="mb-0">View Contract</h6>
+    <span class="material-icons close-icon" (click)='closePopup()'>
+      cancel
+    </span>
+  </div>
+  <div class="col-md-12 p-0">
+    <h5>Name Owner : <span>{{contract?.nameOwner}}</span></h5>
+    <h5>Phone Owner : <span>{{contract?.phoneOwner}}</span></h5>
+    <h5>Name Manager : <span>{{contract?.nameManager}}</span></h5>
+    <h5>Phone Manager : <span>{{contract?.phoneManager}}</span></h5>
+    <h5>Date Visit : <span>{{contract?.dateVisit}}</span></h5>
+    <h5>Date From Contract : <span>{{contract?.dateFromContract}}</span></h5>
+    <h5>Date To Contract : <span>{{contract?.dateToContract}}</span></h5>
+    <h5>Email : <span>{{contract?.email}}</span></h5>
+    <h5>Active : <span>{{contract?.Active ? 'Active' : 'Not Active'}}</span></h5>
+  </div>
+</section>
